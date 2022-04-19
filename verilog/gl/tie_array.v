@@ -5,6 +5,15 @@ module tie_array (VPWR,
  input VGND;
  output [7:0] x;
 
+ wire net1;
+ wire net2;
+ wire net3;
+ wire net4;
+ wire net5;
+ wire net6;
+ wire net7;
+ wire net8;
+
  sky130_fd_sc_hd__conb_1 \conb_1[0]  (.LO(net1),
     .VGND(VGND),
     .VNB(VGND),
