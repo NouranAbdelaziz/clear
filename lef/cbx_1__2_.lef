@@ -47,6 +47,42 @@ MACRO cbx_1__2_
         RECT 27.690 82.000 27.970 86.000 ;
     END
   END SC_OUT_TOP
+  PIN VGND
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 26.960 10.640 28.560 73.680 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 49.200 10.640 50.800 73.680 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 71.440 10.640 73.040 73.680 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 15.840 10.640 17.440 73.680 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 38.080 10.640 39.680 73.680 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 60.320 10.640 61.920 73.680 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 82.560 10.640 84.160 73.680 ;
+    END
+  END VPWR
   PIN bottom_grid_pin_0_
     DIRECTION OUTPUT TRISTATE ;
     USE SIGNAL ;
@@ -903,53 +939,13 @@ MACRO cbx_1__2_
         RECT 60.810 82.000 61.090 86.000 ;
     END
   END top_grid_pin_0_
-  PIN VPWR
-    DIRECTION INOUT ;
-    USE POWER ;
-    PORT
-      LAYER met4 ;
-        RECT 78.855 10.640 80.455 73.680 ;
-    END
-  END VPWR
-  PIN VPWR
-    DIRECTION INOUT ;
-    USE POWER ;
-    PORT
-      LAYER met4 ;
-        RECT 49.200 10.640 50.800 73.680 ;
-    END
-  END VPWR
-  PIN VPWR
-    DIRECTION INOUT ;
-    USE POWER ;
-    PORT
-      LAYER met4 ;
-        RECT 19.545 10.640 21.145 73.680 ;
-    END
-  END VPWR
-  PIN VGND
-    DIRECTION INOUT ;
-    USE GROUND ;
-    PORT
-      LAYER met4 ;
-        RECT 64.025 10.640 65.625 73.680 ;
-    END
-  END VGND
-  PIN VGND
-    DIRECTION INOUT ;
-    USE GROUND ;
-    PORT
-      LAYER met4 ;
-        RECT 34.375 10.640 35.975 73.680 ;
-    END
-  END VGND
   OBS
       LAYER li1 ;
-        RECT 5.520 10.795 95.075 73.525 ;
+        RECT 5.520 10.795 94.300 73.525 ;
       LAYER met1 ;
-        RECT 1.910 7.520 97.450 74.760 ;
+        RECT 0.530 5.140 97.450 77.140 ;
       LAYER met2 ;
-        RECT 1.940 81.720 5.330 84.165 ;
+        RECT 0.560 81.720 5.330 84.165 ;
         RECT 6.170 81.720 16.370 84.165 ;
         RECT 17.210 81.720 27.410 84.165 ;
         RECT 28.250 81.720 38.450 84.165 ;
@@ -959,7 +955,8 @@ MACRO cbx_1__2_
         RECT 72.410 81.720 82.610 84.165 ;
         RECT 83.450 81.720 93.650 84.165 ;
         RECT 94.490 81.720 97.420 84.165 ;
-        RECT 1.940 4.280 97.420 81.720 ;
+        RECT 0.560 4.280 97.420 81.720 ;
+        RECT 0.560 0.835 1.650 4.280 ;
         RECT 2.490 0.835 5.790 4.280 ;
         RECT 6.630 0.835 10.390 4.280 ;
         RECT 11.230 0.835 14.990 4.280 ;
@@ -1118,11 +1115,16 @@ MACRO cbx_1__2_
         RECT 4.000 1.720 96.000 2.360 ;
         RECT 4.400 0.855 95.600 1.720 ;
       LAYER met4 ;
-        RECT 17.775 10.640 19.145 73.680 ;
-        RECT 21.545 10.640 33.975 73.680 ;
-        RECT 36.375 10.640 48.800 73.680 ;
-        RECT 51.200 10.640 63.625 73.680 ;
-        RECT 66.025 10.640 78.455 73.680 ;
+        RECT 8.575 74.080 86.185 75.985 ;
+        RECT 8.575 10.240 15.440 74.080 ;
+        RECT 17.840 10.240 26.560 74.080 ;
+        RECT 28.960 10.240 37.680 74.080 ;
+        RECT 40.080 10.240 48.800 74.080 ;
+        RECT 51.200 10.240 59.920 74.080 ;
+        RECT 62.320 10.240 71.040 74.080 ;
+        RECT 73.440 10.240 82.160 74.080 ;
+        RECT 84.560 10.240 86.185 74.080 ;
+        RECT 8.575 9.695 86.185 10.240 ;
   END
 END cbx_1__2_
 END LIBRARY

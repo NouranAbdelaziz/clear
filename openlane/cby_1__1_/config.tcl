@@ -30,3 +30,5 @@ set ::env(GLB_RT_OBS) "met5 $::env(DIE_AREA)"
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin.cfg
 
 set ::env(DIODE_INSERTION_STRATEGY) 4
+
+set ::env(GLB_RT_ADJUSTMENT) 0.1

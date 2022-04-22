@@ -26,3 +26,6 @@ set ::env(CELL_PAD) 0
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin.cfg
 
 set ::env(DIODE_INSERTION_STRATEGY) 4
+
+set ::env(RESIZER_TIMING_OPTIMIZATIONS) 1
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
