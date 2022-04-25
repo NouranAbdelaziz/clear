@@ -1,0 +1,8 @@
+`cby_1__1_` 
+* congestion too high
+    - decrease density to 0.1
+    * density too low - openroad suggest 0.64
+        - change density to 0.65
+    * routing takes too long for too little design
+        - disable pl reszier design optimizations
+        - disable all optimizations

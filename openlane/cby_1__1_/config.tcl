@@ -22,7 +22,7 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 set ::env(PL_BASIC_PLACEMENT) 1
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 $cby_x $cby_y"
-set ::env(PL_TARGET_DENSITY) 0.8
+set ::env(PL_TARGET_DENSITY) 0.65
 set ::env(CELL_PAD) 0
 
 set ::env(GLB_RT_OBS) "met5 $::env(DIE_AREA)"
@@ -31,4 +31,7 @@ set ::env(FP_PIN_ORDER_CFG) $script_dir/pin.cfg
 
 set ::env(DIODE_INSERTION_STRATEGY) 4
 
-set ::env(GLB_RT_ADJUSTMENT) 0.1
+set ::env(GLB_RT_ADJUSTMENT) 0.3
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
+set ::env(GLB_RESIZER_TIMING_OPTIMIZATIONS) 0
