@@ -20,9 +20,10 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 # Floorplan & Placement
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 $clb_x $clb_y"
-set ::env(PL_TARGET_DENSITY) 0.86
+set ::env(PL_TARGET_DENSITY) 0.7
 set ::env(CELL_PAD) 0
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin.cfg
 
 set ::env(DIODE_INSERTION_STRATEGY) 4
+

@@ -6,3 +6,7 @@
     * routing takes too long for too little design
         - disable pl reszier design optimizations
         - disable all optimizations
+
+`grid_clb`
+* congestion too high
+    - change density to 0.7 (from 0.86)
