@@ -55,7 +55,6 @@ install:
 	git clone -b $(CARAVEL_TAG) $(CARAVEL_REPO) $(CARAVEL_ROOT) --depth=1
 
 # Install DV setup
-.PHONY: simenv
 simenv:
 	docker pull efabless/dv_setup:latest
 
@@ -74,20 +73,23 @@ dv-targets-gl=$(dv_patterns:%=verify-%-gl)
 dv-targets-gl-sdf=$(dv_patterns:%=verify-%-gl-sdf)
 
 TARGET_PATH=$(shell pwd)
-verify_command="cd ${TARGET_PATH}/verilog/dv/$* && export SIM=${SIM} && make"
-dv_base_dependencies=simenv
+verify_command="source ~/.bashrc && cd ${TARGET_PATH}/verilog/dv/$* && export SIM=${SIM} && make $(SIM)"
+dv_base_dependencies=
 docker_run_verify=\
-	docker run -v ${TARGET_PATH}:${TARGET_PATH} -v ${PDK_ROOT}:${PDK_ROOT} \
+	docker run -it \
+		-v ${TARGET_PATH}:${TARGET_PATH} \
+		-v ${PDK_ROOT}:${PDK_ROOT} \
 		-v ${CARAVEL_ROOT}:${CARAVEL_ROOT} \
+		-v ${MCW_ROOT}:${MCW_ROOT} \
 		-e TARGET_PATH=${TARGET_PATH} -e PDK_ROOT=${PDK_ROOT} \
 		-e CARAVEL_ROOT=${CARAVEL_ROOT} \
-		-e TOOLS=/opt/riscv32i \
+		-e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 \
 		-e DESIGNS=$(TARGET_PATH) \
-		-e CORE_VERILOG_PATH=$(TARGET_PATH)/mgmt_core_wrapper/verilog \
-		-e GCC_PREFIX=riscv32-unknown-elf \
+		-e CORE_VERILOG_PATH=$(MCW_ROOT)/verilog \
+		-e PDK=$(PDK) \
 		-e MCW_ROOT=$(MCW_ROOT) \
-		-u $$(id -u $$USER):$$(id -g $$USER) efabless/dv_setup:latest \
-		sh -c $(verify_command)
+		-u $$(id -u $$USER):$$(id -g $$USER) efabless/dv:latest \
+		bash -c $(verify_command)
 
 .PHONY: harden
 harden: $(blocks)

@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 
 `timescale 1 ns / 1 ps
 
@@ -30,7 +30,8 @@
 `define POWER_UP_TIME_PERIOD 100
 `define SOC_SETUP_TIME_PERIOD 2000
 `define SOC_CLOCK_PERIOD 12.5
-`define FPGA_PROG_CLOCK_PERIOD 12.5
+//`define FPGA_PROG_CLOCK_PERIOD 12.5
+`define FPGA_PROG_CLOCK_PERIOD 15
 `define FPGA_CLOCK_PERIOD 12.5
 
 module ccff_test;
@@ -82,7 +83,7 @@ module ccff_test;
       config_done = 1'b0;
       soc_setup_done = 1'b0;
     end
-
+  `include "/home/karim/work/ef/clear/verilog/includes/sdf.v"
   // ----- Begin raw programming clock signal generation -----
   initial
     begin
@@ -135,7 +136,8 @@ module ccff_test;
 //  assign mprj_io[0] = Test_en;
 //  assign mprj_io[1] = IO_ISOL_N;
 //  assign mprj_io[2] = Reset;
-  assign mprj_io[3] = pReset;
+  assign mprj_io[30] = pReset;
+  assign mprj_io[3] = 1'b1;
   assign mprj_io[12] = ccff_head;
 //  assign mprj_io[25] = 1'b0; // Set FPGA to interface logic analyzer by default
 //  assign mprj_io[26] = sc_head;
